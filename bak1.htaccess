@@ -1,0 +1,25 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^lxqg\.com\.cn$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.lxqg\.com\.cn$
+RewriteRule ^lxblog\/\/?(.*)$ "http\:\/\/blog\.lxqg\.com\.cn\/$1" [R=301,L]
+
+# Change wenwang.org to be your main domain.
+RewriteCond %{HTTP_HOST} ^(www.)?wenwang.org$
+
+# Change 'wenwang.org' to be the folder you will use for your main domain.
+RewriteCond %{REQUEST_URI} !^/wenwang.org/
+
+# Don't change this line.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Change 'wenwang.org' to be the folder you will use for your main domain.
+RewriteRule ^(.*)$ /wenwang.org/$1
+
+# Change wenwang.org to be your main domain again.
+# Change 'wenwang.org' to be the folder you will use for your main domain
+# followed by / then the main file for your site, index.php, index.html, etc.
+RewriteCond %{HTTP_HOST} ^(www.)?wenwang.org$
+#RewriteRule ^(/wenwang.org/)?$ wenwang.org/index.php [L]
+RewriteRule ^(/blog/)?$ wenwang.org/index.html [L]
+RewriteRule ^blog\/\/?(.*)$ "http\:\/\/blog\.wenwang\.org\/$1" [R=301,L]

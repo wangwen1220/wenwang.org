@@ -1,0 +1,20 @@
+# robots.txt for lxqg.com.cn
+User-Agent: *
+
+# Directories
+Disallow: /css/
+Disallow: /js/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /install/
+Disallow: /cache/
+Disallow: /logs/
+Disallow: /tmp/
+Disallow: /bak/
+
+# Files
+Disallow: /install.php
+Disallow: /update.php
+Disallow: /admin.php
+Disallow: /*?test=yes*
+Disallow: /test.php?test=yes*
